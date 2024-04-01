@@ -10,6 +10,12 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    //new songs
+    { title: "Bohemian Rhapsody", artist: "Queen", genre: "Rock" },
+    { title: "Billie Jean", artist: "Michael Jackson", genre: "Pop" },
+    { title: "Let's Get It On", artist: "Marvin Gaye", genre: "R&B" },
+    { title: "Hotel California", artist: "Eagles", genre: "Rock" },
+    { title: "Like a Prayer", artist: "Madonna", genre: "Pop" }
 ];
 
 const guardians = {
@@ -40,30 +46,30 @@ function displayPlaylists(playlists) {
     for (const guardian in playlists) {
         const playlist = playlists[guardian];
 
-        // Create container for playlist
+        // Creating container for playlist
         const playlistContainer = document.createElement("div");
         playlistContainer.className = "playlist";
 
-        // Create header for playlist
+        // Creating header for playlist
         const playlistHeader = document.createElement("h2");
         playlistHeader.className = "playlist-title";
         playlistHeader.textContent = `${guardian}'s Playlist`;
         playlistContainer.appendChild(playlistHeader);
 
-        // Create list for playlist songs
+        // Creating list for playlist songs
         const playlistList = document.createElement("ul");
         playlistList.className = "playlist-songs";
         playlist.forEach(song => {
             const listItem = document.createElement("li");
             listItem.className = "song";
 
-            // Create span for song title
+            // Creatng a span for song title
             const songTitle = document.createElement("span");
             songTitle.className = "song-title";
             songTitle.textContent = song.split(" - ")[0]; // Extracting only the title
             listItem.appendChild(songTitle);
 
-            // Add artist information
+            // Adding artist information
             const songArtist = document.createElement("span");
             songArtist.textContent = " - " + song.split(" - ")[1];
             listItem.appendChild(songArtist);
@@ -71,15 +77,15 @@ function displayPlaylists(playlists) {
             playlistList.appendChild(listItem);
         });
 
-        // Append list to container
+        // Appending list to container
         playlistContainer.appendChild(playlistList);
 
-        // Append container to main container
+        // Appending container to main container
         container.appendChild(playlistContainer);
     }
 }
 
 
-// Call generatePlaylist and display the playlists for each Guardian
+// Calling generatePlaylist and displaying the playlists for each Guardian
 const generatedPlaylists = generatePlaylist(guardians, songs);
 displayPlaylists(generatedPlaylists);
