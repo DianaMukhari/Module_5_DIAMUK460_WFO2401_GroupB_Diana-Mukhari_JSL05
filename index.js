@@ -1,4 +1,3 @@
-// JavaScript code goes here
 const songs = [
     { title: "Hooked on a Feeling", artist: "Blue Swede", genre: "Pop" },
     { title: "Moonage Daydream", artist: "David Bowie", genre: "Rock" },
@@ -11,13 +10,6 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
-    { title: "lots os love", artist: "westlife", genre: "R&B" },
-    { title: "tears of alion", artist: "Maryjane flogs", genre: "R&B" },
-    { title: "live a little", artist: "oxford james", genre: "Rock" },
-    { title: "sweet pie", artist: "brony", genre: "Pop" },
-    { title: "Fool again", artist: "kelvin momo", genre: "Rock" }
-    
-
 ];
 
 const guardians = {
@@ -41,6 +33,7 @@ function generatePlaylist(guardians, songs) {
 
     return playlists;
 };
+
 function displayPlaylists(playlists) {
     const container = document.getElementById("playlists");
 
@@ -63,7 +56,18 @@ function displayPlaylists(playlists) {
         playlist.forEach(song => {
             const listItem = document.createElement("li");
             listItem.className = "song";
-            listItem.innerHTML = `<span class="song-title">${song}</span>`;
+
+            // Create span for song title
+            const songTitle = document.createElement("span");
+            songTitle.className = "song-title";
+            songTitle.textContent = song.split(" - ")[0]; // Extracting only the title
+            listItem.appendChild(songTitle);
+
+            // Add artist information
+            const songArtist = document.createElement("span");
+            songArtist.textContent = " - " + song.split(" - ")[1];
+            listItem.appendChild(songArtist);
+
             playlistList.appendChild(listItem);
         });
 
@@ -74,9 +78,6 @@ function displayPlaylists(playlists) {
         container.appendChild(playlistContainer);
     }
 }
-
-
-
 
 
 // Call generatePlaylist and display the playlists for each Guardian
