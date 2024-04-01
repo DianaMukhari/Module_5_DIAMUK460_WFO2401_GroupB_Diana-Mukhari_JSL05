@@ -10,7 +10,14 @@ const songs = [
     { title: "Ain't No Mountain High Enough", artist: "Marvin Gaye & Tammi Terrell", genre: "R&B" },
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
-    { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" }
+    { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "lots os love", artist: "westlife", genre: "R&B" },
+    { title: "tears of alion", artist: "Maryjane flogs", genre: "R&B" },
+    { title: "live a little", artist: "oxford james", genre: "Rock" },
+    { title: "sweet pie", artist: "brony", genre: "Pop" },
+    { title: "Fool again", artist: "kelvin momo", genre: "Rock" }
+    
+
 ];
 
 const guardians = {
